@@ -1,0 +1,9 @@
+[build]
+  base = "Front"
+  publish = "dist/miniProyecto2/browser"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
