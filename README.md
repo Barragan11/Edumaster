@@ -1,30 +1,20 @@
-\# Edumaster 🎓
+# Edumaster 🎓
 
+Sistema de gestión de cursos escolares desarrollado con arquitectura fullstack.
 
+## 🚀 Tecnologías
 
-Sistema de cursos escolares desarrollado con:
+* Angular (Frontend)
+* Node.js + Express (Backend)
+* MySQL (Base de datos en la nube - Clever Cloud)
 
+## 📂 Estructura del proyecto
 
+* `/Front` → Aplicación Angular (Frontend)
+* `/Back/backend` → API REST con Node.js
 
-\## Tecnologías
+## 🌐 Despliegue
 
-\- Angular
-
-\- Node.js
-
-\- MySQL
-
-
-
-\## Estructura
-
-\- /Certificacion → Frontend Angular
-
-\- /Back → Backend Node.js (si lo agregas)
-
-
-
-\## Autor
-
-Luis Ángel Barragán González
-
+* Frontend: Netlify
+* Backend: Render
+* Base de datos: Clever Cloud
