@@ -9,12 +9,12 @@ export class Tareas {
   private http = inject(HttpClient);
 
   getTareas() {
-    return this.http.get<any[]>('http://localhost:3000/api/tareas');
+    return this.http.get<any[]>('https://edumaster-back.onrender.com/api/tareas');
   }
 
   cambiarEstado(id: number, estado: string) {
     return this.http.put(
-      `http://localhost:3000/api/tareas/${id}`,
+      `https://edumaster-back.onrender.com/api/tareas/${id}`,
       { estado }
     );
   }
