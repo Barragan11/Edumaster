@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Curso {
 
-  private url = 'http://localhost:3000/api/cursos';
+  private url = 'https://edumaster-back.onrender.com/api/cursos';
 
   constructor(private http: HttpClient) {}
 
@@ -15,18 +15,18 @@ export class Curso {
   }
 
   createCurso(curso: any) {
-  return this.http.post('http://localhost:3000/api/cursos', curso);
+  return this.http.post('https://edumaster-back.onrender.com/api/cursos', curso);
 }
 
 deleteCurso(id: number) {
-  return this.http.delete(`http://localhost:3000/api/cursos/${id}`);
+  return this.http.delete(`https://edumaster-back.onrender.com/api/cursos/${id}`);
 }
 
 updateCurso(id: number, curso: any) {
-  return this.http.put(`http://localhost:3000/api/cursos/${id}`, curso);
+  return this.http.put(`https://edumaster-back.onrender.com/api/cursos/${id}`, curso);
 }
 
 getCursoById(id: number) {
-  return this.http.get<any>(`http://localhost:3000/api/cursos/${id}`);
+  return this.http.get<any>(`https://edumaster-back.onrender.com/api/cursos/${id}`);
 }
 }
