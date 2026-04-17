@@ -1,0 +1,44 @@
+<div class="container mt-5">
+
+  <h3>Crear Curso</h3>
+
+  <form [formGroup]="form" (ngSubmit)="guardar()">
+
+    <input type="text" class="form-control mb-2"
+      placeholder="Nombre"
+      formControlName="nombre">
+
+    @if (form.get('nombre')?.invalid && form.get('nombre')?.touched) {
+      <small class="text-danger">Nombre inválido</small>
+    }
+
+    <input type="text" class="form-control mb-2"
+      placeholder="Descripción"
+      formControlName="descripcion">
+
+    <input type="text" class="form-control mb-2"
+      placeholder="Imagen (ej: angular.png)"
+      formControlName="imagen">
+    <input type="text" class="form-control mb-2"
+  placeholder="Descripción larga"
+  formControlName="descripcion_larga">
+
+<input type="text" class="form-control mb-2"
+  placeholder="Duración (ej: 40 horas)"
+  formControlName="duracion">
+
+<input type="number" class="form-control mb-2"
+  placeholder="Costo"
+  formControlName="costo">
+
+<input type="text" class="form-control mb-2"
+  placeholder="Nivel (Básico, Intermedio, Avanzado)"
+  formControlName="nivel">
+
+    <button class="btn btn-success mt-3">
+      Guardar Curso
+    </button>
+
+  </form>
+
+</div>

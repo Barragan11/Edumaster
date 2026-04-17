@@ -1,0 +1,91 @@
+<div class="auth-container">
+
+  <div class="auth-card">
+
+    <!-- LOGO -->
+    <div class="logo-container">
+      <img src="/LogoSinFondo.JPG" class="logo">
+      <h2>EduMaster</h2>
+      <p>Sistema de gestión académica</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button 
+        [class.active]="modo === 'login'" 
+        (click)="modo = 'login'">
+        Iniciar sesión
+      </button>
+
+      <button 
+        [class.active]="modo === 'registro'" 
+        (click)="modo = 'registro'">
+        Registrarse
+      </button>
+    </div>
+
+    <!-- ================= LOGIN ================= -->
+    @if (modo === 'login') {
+      <form (ngSubmit)="iniciarSesion()">
+
+        <input 
+          type="text" 
+          class="form-control mb-2"
+          placeholder="Usuario"
+          [(ngModel)]="usuario" 
+          name="usuario"
+          required>
+
+        <input 
+          type="password" 
+          class="form-control mb-2"
+          placeholder="Contraseña"
+          [(ngModel)]="password" 
+          name="password"
+          required>
+
+        <button class="btn-main" type="submit">
+          Iniciar sesión
+        </button>
+
+      </form>
+    }
+
+    <!-- ================= REGISTRO ================= -->
+    @if (modo === 'registro') {
+  <form (ngSubmit)="registrar()">
+
+    <input 
+      type="text" 
+      class="form-control mb-2"
+      placeholder="Usuario"
+      [(ngModel)]="usuario" 
+      name="usuario"
+      required>
+
+    <input 
+      type="password" 
+      class="form-control mb-2"
+      placeholder="Contraseña"
+      [(ngModel)]="password" 
+      name="password"
+      required>
+
+    <input 
+      type="password" 
+      class="form-control mb-2"
+      placeholder="Confirmar contraseña"
+      [(ngModel)]="confirmPassword" 
+      name="confirmPassword"
+      required>
+
+    <button class="btn-main" type="submit">
+      Crear cuenta
+    </button>
+
+  </form>
+}
+
+  </div>
+
+</div>

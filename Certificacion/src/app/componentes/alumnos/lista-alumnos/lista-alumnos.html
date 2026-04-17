@@ -1,0 +1,58 @@
+<div class="container mt-4">
+
+  <!-- HEADER -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Lista de alumnos</h2>
+
+    @if (auth.esAdmin()) {
+  <a routerLink="/alumnos/nuevo" class="btn btn-success">
+    Nuevo alumno
+  </a>
+}
+  </div>
+
+  <!-- TABLA -->
+  <h4 class="mb-2">Vista tabla</h4>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-primary">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (alumno of lista; track alumno.id) {
+        <tr>
+          <td>{{ alumno.id }}</td>
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.correo }}</td>
+          <td>{{ alumno.telefono }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <!-- TARJETAS -->
+  <h4 class="mt-5 mb-3">Vista tarjetas</h4>
+
+  <div class="row">
+
+    @for (alumno of lista; track alumno.id) {
+      <div class="col-md-4">
+
+        @if (auth.esAdmin()) {
+        <app-tarjeta-alumno
+          [alumno]="alumno"
+          (eliminar)="eliminarAlumno($event)">
+        </app-tarjeta-alumno>
+      }
+      </div>
+    }
+
+  </div>
+
+</div>

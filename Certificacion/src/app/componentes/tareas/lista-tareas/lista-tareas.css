@@ -1,0 +1,81 @@
+.tareas-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+/* GRID */
+.grid-tareas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card-tarea {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  position: relative;
+}
+
+.card-tarea:hover {
+  transform: translateY(-5px);
+}
+
+/* TEXTO */
+.descripcion {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.fecha {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* ESTADO */
+.estado {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.completada {
+  background: #22c55e;
+}
+
+.pendiente {
+  background: #f59e0b;
+}
+
+/* BOTÓN */
+.btn-accion {
+  margin-top: 15px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1e3a8a, #22c55e);
+  color: white;
+  cursor: pointer;
+}
+
+.btn-accion:hover {
+  opacity: 0.9;
+}

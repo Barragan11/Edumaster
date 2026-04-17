@@ -1,0 +1,28 @@
+.alumno-card {
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.alumno-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Avatar circular */
+.avatar {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+hr {
+  margin: 10px 0;
+}

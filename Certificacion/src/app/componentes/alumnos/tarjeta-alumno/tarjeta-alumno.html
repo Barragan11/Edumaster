@@ -1,0 +1,41 @@
+<div class="card alumno-card shadow-sm">
+
+  <div class="card-body">
+
+    <!-- HEADER -->
+    <div class="d-flex align-items-center mb-2">
+      <div class="avatar">
+        {{ alumno.nombre.charAt(0) }}
+      </div>
+
+      <div class="ms-3">
+        <h5 class="mb-0">{{ alumno.nombre }}</h5>
+        <small class="text-muted">{{ alumno.carrera }}</small>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- INFO -->
+    <p class="mb-1">
+      📧 {{ alumno.correo }}
+    </p>
+
+    <p class="mb-1">
+      📱 {{ alumno.telefono }}
+    </p>
+
+    <p class="mb-2">
+      🎓 {{ alumno.matricula }}
+    </p>
+
+    <!-- BOTÓN -->
+     @if (auth.esAdmin()) {
+    <button class="btn btn-outline-danger btn-sm w-100 mt-2"
+            (click)="eliminarAlumno()">
+      Eliminar
+    </button>
+  }
+  </div>
+
+</div>

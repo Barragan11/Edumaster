@@ -1,0 +1,71 @@
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #22c55e);
+}
+
+/* CARD */
+.auth-card {
+  width: 550px;           /* MÁS GRANDE */
+  max-width: 90%;         /* RESPONSIVE */
+  padding: 40px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  text-align: center;
+   min-height: 550px;
+}
+
+/* LOGO */
+.logo {
+  width: 90px;
+  margin-bottom: 10px;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  margin: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #666;
+}
+
+.tabs button.active {
+  color: #1e3a8a;
+  border-bottom: 3px solid #22c55e;
+}
+
+/* INPUTS */
+.form-control {
+  margin-bottom: 18px;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+/* BOTÓN */
+.btn-main {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1e3a8a, #22c55e);
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-main:hover {
+  transform: scale(1.03);
+}

@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+  
+  <!-- LOGO -->
+  <a class="navbar-brand">
+    <img src="/LogoSinFondo.JPG" class="logo-navbar">
+  </a>
+
+  <div class="collapse navbar-collapse">
+
+    <!-- MENÚ -->
+    <ul class="navbar-nav me-auto ms-4">
+
+      <!-- SIEMPRE -->
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link">Inicio</a>
+      </li>
+
+      <!-- 🔥 USUARIO NORMAL -->
+      @if (usuario()?.rol === 'usuario') {
+        <ng-container>
+          <li class="nav-item">
+            <a routerLink="/cursos" class="nav-link">Cursos</a>
+          </li>
+
+          <li class="nav-item">
+            <a routerLink="/tareas" class="nav-link">Tareas</a>
+          </li>
+        </ng-container>
+      }
+
+      <!-- 🔥 ADMIN -->
+      @if (usuario()?.rol === 'admin') {
+        <ng-container>
+
+          <li class="nav-item">
+            <a routerLink="/dashboard" class="nav-link">Dashboard</a>
+          </li>
+
+        </ng-container>
+      }
+
+    </ul>
+
+    <!-- DERECHA -->
+    <div class="d-flex align-items-center gap-2">
+
+      <!-- NO LOGUEADO -->
+      @if (!usuario()) {
+        <a routerLink="/login" class="btn btn-outline-light">
+          Login
+        </a>
+      }
+
+      <!-- LOGUEADO -->
+      @if (usuario()) {
+
+        <span class="text-white">
+         {{ usuario().usuario }}
+        </span>
+
+        <span 
+          class="badge"
+          [class.bg-danger]="usuario().rol === 'admin'"
+          [class.bg-secondary]="usuario().rol === 'usuario'">
+          {{ usuario().rol }}
+        </span>
+
+        <button class="btn btn-outline-light" (click)="logout()">
+          Cerrar sesión
+        </button>
+
+      }
+
+    </div>
+
+  </div>
+</nav>

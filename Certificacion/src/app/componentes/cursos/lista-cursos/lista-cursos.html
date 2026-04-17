@@ -1,0 +1,56 @@
+<div class="container mt-4">
+
+  <!-- HEADER -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="m-0">Cursos</h2>
+     @if (auth.esAdmin()) {
+    <a routerLink="/cursos/nuevo" class="btn btn-success">
+      + Nuevo Curso
+    </a>
+  }
+  </div>
+
+  @if (cursos.length === 0) {
+    <p>No hay cursos</p>
+  }
+
+  <div class="row mt-3">
+
+    @for (curso of cursos; track $index) {
+      <div class="col-md-4 mb-3">
+
+        <div class="card p-3 shadow">
+
+          <img 
+            [src]="'http://localhost:3000/images/' + curso.imagen" 
+            class="img-curso">
+
+          <h4 class="mt-2">{{ curso.nombre }}</h4>
+          <p>{{ curso.descripcion }}</p>
+
+          <a 
+            [routerLink]="['/cursos', curso.id]" 
+            class="btn btn-primary">
+            Ver detalle
+          </a>
+           @if (auth.esAdmin()) {
+          <button 
+          class="btn btn-danger mt-2"
+          (click)="eliminarCurso(curso.id)">
+          Eliminar
+        </button>
+        
+        <a 
+          [routerLink]="['/cursos/editar', curso.id]" 
+          class="btn btn-warning mt-2">
+          Editar
+        </a>
+      }
+        </div>
+
+      </div>
+    }
+
+  </div>
+
+</div>

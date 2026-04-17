@@ -1,0 +1,39 @@
+.navbar {
+  padding: 18px 40px; /* 🔥 MÁS ALTO */
+}
+
+/* LOGO + NOMBRE */
+.navbar-brand {
+  font-size: 1.8rem;   /* 🔥 MÁS GRANDE */
+  letter-spacing: 1px;
+}
+
+/* LOGO */
+.navbar-brand img {
+  width: 50px; /* 🔥 MÁS GRANDE */
+}
+
+/* LINKS */
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  margin-right: 15px;
+  transition: 0.3s;
+}
+
+/* HOVER LINKS */
+.navbar-nav .nav-link:hover {
+  color: #22c55e !important;
+}
+
+/* BOTONES */
+.navbar .btn {
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 10px;
+}
+
+/* BOTÓN DASHBOARD MÁS PRO */
+.btn-success {
+  background: linear-gradient(135deg, #1e3a8a, #22c55e);
+  border: none;
+}

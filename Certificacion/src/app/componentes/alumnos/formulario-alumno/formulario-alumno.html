@@ -1,0 +1,50 @@
+<div class="container mt-5">
+
+  <h3>Registrar alumno</h3>
+
+  <form [formGroup]="form" (ngSubmit)="guardar()">
+
+    <!-- NOMBRE -->
+    <input type="text" class="form-control mb-2"
+      placeholder="Nombre"
+      formControlName="nombre">
+
+    @if (form.get('nombre')?.invalid && form.get('nombre')?.touched) {
+      <small class="text-danger">Nombre mínimo 3 caracteres</small>
+    }
+
+    <!-- CORREO -->
+    <input type="email" class="form-control mb-2"
+      placeholder="Correo"
+      formControlName="correo">
+
+    @if (form.get('correo')?.invalid && form.get('correo')?.touched) {
+      <small class="text-danger">Correo inválido</small>
+    }
+
+    <!-- TELÉFONO -->
+    <input type="text" class="form-control mb-2"
+      placeholder="Teléfono"
+      formControlName="telefono">
+
+    @if (form.get('telefono')?.invalid && form.get('telefono')?.touched) {
+      <small class="text-danger">Teléfono mínimo 10 dígitos</small>
+    }
+
+    <!-- MATRÍCULA -->
+    <input type="text" class="form-control mb-2"
+      placeholder="Matrícula"
+      formControlName="matricula">
+
+    <!-- CARRERA -->
+    <input type="text" class="form-control mb-2"
+      placeholder="Carrera"
+      formControlName="carrera">
+
+    <button class="btn btn-success mt-3">
+      Guardar
+    </button>
+
+  </form>
+
+</div>

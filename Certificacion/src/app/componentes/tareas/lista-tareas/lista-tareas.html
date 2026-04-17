@@ -1,0 +1,61 @@
+<div class="tareas-container">
+
+  <h2 class="titulo">Gestión de tareas</h2>
+
+  <!-- 🔥 AQUÍ VAN LOS FILTROS -->
+  <div class="filtros mb-3">
+
+    <button class="btn btn-primary me-2"
+      (click)="filtrar('pendiente')">
+      Pendientes
+    </button>
+
+    <button class="btn btn-success me-2"
+      (click)="filtrar('completada')">
+      Completadas
+    </button>
+
+    <button class="btn btn-secondary"
+      (click)="mostrarTodas()">
+      Todas
+    </button>
+
+  </div>
+
+  <!-- YA TENÍAS ESTO -->
+  <div class="grid-tareas">
+
+    @for (tarea of tareas; track tarea.id) {
+
+      <div class="card-tarea">
+
+        <h4>{{ tarea.titulo }}</h4>
+
+        <p class="descripcion">
+          {{ tarea.descripcion }}
+        </p>
+
+        <span class="fecha">
+          📅 {{ tarea.fecha }}
+        </span>
+
+        <span 
+          class="estado"
+          [class.completada]="tarea.estado === 'completada'"
+          [class.pendiente]="tarea.estado === 'pendiente'">
+          {{ tarea.estado | estadoTexto }}
+        </span>
+
+        <button 
+          class="btn-accion"
+          (click)="cambiarEstado(tarea)">
+          Cambiar estado
+        </button>
+
+      </div>
+
+    }
+
+  </div>
+
+</div>

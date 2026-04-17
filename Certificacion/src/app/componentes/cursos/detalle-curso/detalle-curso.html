@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <a routerLink="/cursos" class="btn btn-secondary mb-3">
+  ⬅ Regresar
+</a>
+
+  @if (curso) {
+
+    <div class="card p-4 shadow-lg">
+
+      <div class="row">
+
+        <!-- IMAGEN -->
+        <div class="col-md-4 text-center">
+          <img 
+            [src]="'http://localhost:3000/images/' + curso.imagen"
+            class="img-detalle">
+        </div>
+
+        <!-- INFORMACIÓN -->
+        <div class="col-md-8">
+
+          <h2>{{ curso.nombre }}</h2>
+
+          <p class="text-muted">{{ curso.descripcion }}</p>
+
+          <hr>
+
+          <p><strong>Descripción completa:</strong></p>
+          <p>{{ curso.descripcion_larga }}</p>
+
+          <p><strong>Duración:</strong> {{ curso.duracion }}</p>
+          <p><strong>Costo:</strong> ${{ curso.costo }}</p>
+          <p><strong>Nivel:</strong> {{ curso.nivel }}</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  } @else {
+    <p>Cargando...</p>
+  }
+
+</div>

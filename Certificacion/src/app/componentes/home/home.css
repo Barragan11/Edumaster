@@ -1,0 +1,160 @@
+.home {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #22c55e);
+  min-height: 100vh;
+  color: white;
+}
+
+/* 🔥 evita espacios blancos */
+.home section {
+  margin: 0;
+  background: transparent;
+}
+
+/* ================= HERO NIVEL DIOS ================= */
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+}
+
+/* TEXTO */
+.hero-text {
+  max-width: 550px;
+}
+
+.titulo {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.descripcion {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* BOTONES */
+.botones {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+/* LOGO */
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-grande {
+  width: 280px;
+  animation: flotar 3s ease-in-out infinite;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+}
+
+/* ANIMACIÓN */
+@keyframes flotar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ================= QUIENES SOMOS ================= */
+
+.quienes {
+  padding: 60px 0;
+}
+
+.texto-quienes {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  text-align: center;
+}
+
+/* ================= FEATURES ================= */
+
+.seccion {
+  padding: 60px 0;
+}
+
+/* CARDS */
+.feature-card {
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  background: white;
+  color: #111;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ================= CTA ================= */
+
+.cta {
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cta p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .botones {
+    justify-content: center;
+  }
+}   
+
+.contenido {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+body {
+  margin: 0;
+}
