@@ -6,7 +6,7 @@ const getCursos = async (req, res) => {
      console.log('CURSOS DESDE NODE:', cursos); 
     res.json(cursos);
   } catch (error) {
-  console.error("ERROR REAL:", error); 🔥
+  console.error("ERROR REAL:", error); 
   res.status(500).json({ 
     mensaje: 'Error al obtener cursos',
     error: error.message
