@@ -16,9 +16,25 @@ const getCursos = async (req, res) => {
 
 const crearCurso = async (req, res) => {
   try {
-    const { nombre, descripcion, imagen } = req.body;
+    const { 
+      nombre, 
+      descripcion, 
+      imagen,
+      descripcion_larga,
+      duracion,
+      costo,
+      nivel
+    } = req.body;
 
-    await CursoModel.createCurso({ nombre, descripcion, imagen });
+    await CursoModel.createCurso({ 
+      nombre, 
+      descripcion, 
+      imagen,
+      descripcion_larga,
+      duracion,
+      costo,
+      nivel
+    });
 
     res.json({ mensaje: 'Curso creado correctamente' });
   } catch (error) {
