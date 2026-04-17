@@ -6,8 +6,12 @@ const getCursos = async (req, res) => {
      console.log('CURSOS DESDE NODE:', cursos); 
     res.json(cursos);
   } catch (error) {
-    res.status(500).json({ mensaje: 'Error al obtener cursos' });
-  }
+  console.error("ERROR REAL:", error); 🔥
+  res.status(500).json({ 
+    mensaje: 'Error al obtener cursos',
+    error: error.message
+  });
+}
 };
 
 const crearCurso = async (req, res) => {
