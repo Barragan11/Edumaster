@@ -7,11 +7,21 @@ async function getAllCursos() {
 
 
 async function createCurso(curso) {
-  const { nombre, descripcion, imagen } = curso;
+  const { 
+    nombre, 
+    descripcion, 
+    imagen,
+    descripcion_larga,
+    duracion,
+    costo,
+    nivel
+  } = curso;
 
   const [result] = await pool.query(
-    'INSERT INTO cursos (nombre, descripcion, imagen) VALUES (?, ?, ?)',
-    [nombre, descripcion, imagen]
+    `INSERT INTO cursos 
+    (nombre, descripcion, imagen, descripcion_larga, duracion, costo, nivel) 
+    VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    [nombre, descripcion, imagen, descripcion_larga, duracion, costo, nivel]
   );
 
   return result;
