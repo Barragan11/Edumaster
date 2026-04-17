@@ -13,11 +13,11 @@ export class Auth {
   usuarioSignal = signal<any>(this.obtenerUsuario());
 
   login(data: any) {
-    return this.http.post<any>('http://localhost:3000/api/auth/login', data);
+    return this.http.post<any>('https://edumaster-back.onrender.com/api/auth/login', data);
   }
 
   registro(data: any) {
-    return this.http.post<any>('http://localhost:3000/api/auth/registro', data);
+    return this.http.post<any>('https://edumaster-back.onrender.com/api/auth/registro', data);
   }
 
   guardarUsuario(usuario: any) {
